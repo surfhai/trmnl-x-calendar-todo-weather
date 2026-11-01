@@ -1,0 +1,5 @@
+# Private configuration with webhook URL, location, calendar and spreadsheet IDs
+config.gs
+
+# Browser network recordings may contain cookies, tokens and personal data
+*.har
