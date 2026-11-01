@@ -1,5 +1,7 @@
 # TRMNL X – Calendar, Weather, Tasks & Notes (Google Apps Script)
 
+![Example of the TRMNL X display: calendar grid, event list, weather table, tasks/notes and status line](example_display.png)
+
 A Google Apps Script that collects calendar events, a DWD weather forecast and recurring tasks and notes from a Google Sheet and sends them via webhook to a **TRMNL Private Plugin**.
 
 The code is in the file **`trmnl_feed.gs`**; your personal settings go into a separate file **`config.gs`**, created from the template `config.example.gs`. The optional `waste.gs` adds the waste collection dates. This guide describes how to turn it into a working setup – including the Google Sheet and the small helper script that automatically sets the date when a task is ticked off.
