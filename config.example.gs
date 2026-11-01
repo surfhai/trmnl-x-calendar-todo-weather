@@ -48,6 +48,10 @@ const CONFIG = {
   TASK_LEAD_DAYS: 2,                // a task is sent once it is due in <= 2 days (or overdue)
   NOTES_HAS_HEADER: true,           // true if row 1 in "Notes" is a header
 
+  // Waste collection (waste.gs): IDs from listWasteAreas
+  WASTE_CITY_ID: null, // municipality ID
+  WASTE_AREA_ID: null, // district ID
+
   // Webhook limit (bytes) without TRMNL+
   PAYLOAD_LIMIT: 5000,
 

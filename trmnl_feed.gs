@@ -5,10 +5,12 @@
  * - DWD weather (Bright Sky API), hourly values aggregated into blocks (default: 12 values of 2 h for 24 h)
  * - Sunrise/sunset computed locally (SunCalc algorithm)
  * - Google Sheet: "Recurring Tasks" (due recurring tasks) + "Notes" (column A)
+ * - Waste collection dates via waste.gs (optional, separate file in the same project)
  * - Compact payload (< 5 KB webhook limit): weather in columns, unused fields removed
  *
  * Configuration lives in a separate file: config.gs (private, not committed),
- * created from the template config.example.gs.
+ * created from the template config.example.gs. Script files of the project:
+ * trmnl_feed.gs, config.gs, waste.gs (optional).
  */
 
 /**
@@ -29,6 +31,8 @@ function pushDataToTrmnl() {
         weather: weatherData,
         tasks: sheetData.tasks,
         notes: sheetData.notes,
+        // waste.gs is optional: without it the field is omitted (undefined is dropped by JSON.stringify)
+        waste: typeof getWasteData === "function" ? getWasteData() : undefined,
         updated_at: Utilities.formatDate(new Date(), CONFIG.TIMEZONE, "HH:mm")
       }
     };
